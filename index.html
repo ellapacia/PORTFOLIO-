@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel
+    ="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 10;
+            padding: 5;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Serif', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+        #home {
+            background-color: #FFE5B4;
+            color: black;
+            text-align: center;
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 200px;
+            border-radius: 5%;
+            margin-bottom: 20px;
+            border: 5px solid white;
+            margin-right: 20px;
+            align-self: flex-start;
+        }
+        .home-content {
+            text-align: left;
+        }
+        h1 {
+            font-size: 2.3rem;
+            margin: 1rem 0;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        #about, #skills, #contact {
+            padding: 3rem 2rem;
+            text-align: left;
+        }
+        #about { background-color: lightgrey; }
+        #skills { background-color: #FFE5B4; }
+        #contact { background-color: lightgrey; }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.0rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <img src="/ganda/nyek.jpg" alt="Picture" class="profile-picture">
+        <div class="home-content">
+            <h1 id="greeting">Pacía, Ella Danna</h1>
+            <p>BSIT - 2C</p>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Me:</h2>
+        <p>Student of Information Technology (IT), focusing on computer systems, software development, networking, and data management.</p>
+        <h2>Personal Information:</h2>
+        <p>Name: Pacía, Ella Danna</p>
+        <p>Age: 21 years old</p>
+        <p>Address: San Fernando, Sto. Tomas, City of Batangas</p>
+    </section>
+    <section id="skills">
+        <h2>My Skills:</h2>
+        <ul>
+            <li>Teamwork & Collaboration</li>
+            <li>Adaptability & Creativity</li>
+            <li>Problem-solving</li>
+            <li>Time Management</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact Me:</h2>
+        <p>✉️ Email: <a href="mailto:gandako@gmail.com">gandako@gmail.com</a></p>
+        <p>🔗 Link: <a href="https://linkedin
+        .com/in/yourprofile" target="_blank">facebook.com/share</a></p>
+        <p>📞 Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+    </section>
+    <footer>
+        <p>PORTFOLIO</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentHour = new Date().getHours();
+            let greeting = "Hello!";
+            if (currentHour < 12) {
+                greeting = "Good morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good afternoon!";
+            } else {
+                greeting = "Good evening
+                !";
+            }
+            document.getElementById("greeting").innerText = greeting + " I'm Pacía, Ella Danna.";document.querySelectorAll("header nav ul li a").forEach(link => {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                let targetId = this.getAttribute("href").substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
